@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Mie Escobar | Mie Pedas Level Neraka</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="hero">
+    <h1>🌶 MIE ESCOBAR 🌶</h1>
+    <p>Rasa Gurih • Pedas Sesuai Level</p>
+</header>
+
+<section class="container">
+    <div class="menu">
+        <h2>🍜 MENU MIE</h2>
+
+        <div class="item">
+            <span>Mie Jomblo</span>
+            <span>10K</span>
+        </div>
+        <p>Cabe 20 + Mie + Sayur + Pentol</p>
+
+        <div class="item">
+            <span>Mie PDKT</span>
+            <span>10K</span>
+        </div>
+        <p>Cabe 30 + Mie + Sayur + Pentol</p>
+
+        <div class="item">
+            <span>Mie Pacaran</span>
+            <span>13K</span>
+        </div>
+        <p>Cabe 40 + Mie + Sayur + Pentol</p>
+
+        <div class="item">
+            <span>Mie Pelakor</span>
+            <span>15K</span>
+        </div>
+        <p>Cabe 50 + Mie + Sayur + Pentol</p>
+    </div>
+
+    <div class="image">
+        <img src="1769964301856.jpg" alt="Mie Escobar">
+    </div>
+</section>
+
+<section class="extra">
+    <h2>➕ TAMBAHAN</h2>
+    <ul>
+        <li>Bon Cabe <span>1K</span></li>
+        <li>Telur Ceplok <span>3K</span></li>
+        <li>Telur Dadar <span>3K</span></li>
+        <li>Pentol Isi 3 <span>3K</span></li>
+    </ul>
+</section>
+
+<section class="drink">
+    <h2>🥤 MINUMAN</h2>
+    <ul>
+        <li>Es Teh <span>3K</span></li>
+        <li>Air Putih <span>2K</span></li>
+    </ul>
+</section>
+
+<section class="order">
+    <h2>📝 FORM PEMESANAN</h2>
+
+    <form onsubmit="kirimPesanan(); return false;">
+        <label>Nama Pemesan</label>
+        <input type="text" id="nama" required>
+
+        <label>Alamat Pengantaran</label>
+        <textarea id="alamat" required></textarea>
+
+        <label>Pilih Menu Mie</label>
+        <select id="mie">
+            <option value="Mie Jomblo - 10K">Mie Jomblo - 10K</option>
+            <option value="Mie PDKT - 10K">Mie PDKT - 10K</option>
+            <option value="Mie Pacaran - 13K">Mie Pacaran - 13K</option>
+            <option value="Mie Pelakor - 15K">Mie Pelakor - 15K</option>
+        </select>
+
+        <label>Level Pedas (Jumlah Cabe)</label>
+        <input type="number" id="cabe" placeholder="Contoh: 30" required>
+
+        <label>Pilih Minuman</label>
+        <select id="minum">
+            <option value="Es Teh - 3K">Es Teh - 3K</option>
+            <option value="Air Putih - 2K">Air Putih - 2K</option>
+            <option value="Tidak Pesan Minuman">Tidak Pesan Minuman</option>
+        </select>
+
+        <button type="submit">📲 PESAN VIA WHATSAPP</button>
+    </form>
+</section>
+
+<section class="cta">
+    <h2>🔥 REQUEST CABE SESUAI SELERAMU 🔥</h2>
+    <p>Harga belum termasuk kasih sayang 😜</p>
+</section>
+
+<footer>
+    <p>📞 085235577553</p>
+    <p>📍 Jln. Mangga 1 No.19 Perumnas Kamal</p>
+    <p>⏰ Buka setiap hari 08.00 - 20.00</p>
+</footer>
+
+<script>
+function kirimPesanan() {
+    let nama = document.getElementById("nama").value;
+    let alamat = document.getElementById("alamat").value;
+    let mie = document.getElementById("mie").value;
+    let cabe = document.getElementById("cabe").value;
+    let minum = document.getElementById("minum").value;
+
+    let noWa = "6285235577553"; // GANTI JIKA PERLU
+
+    let pesan = 
+`Halo Mie Escobar 🌶
+Saya mau pesan:
+
+👤 Nama: ${nama}
+🏠 Alamat: ${alamat}
+🍜 Menu: ${mie}
+🔥 Level Cabe: ${cabe}
+🥤 Minuman: ${minum}
+
+Terima kasih 🙏`;
+
+    let url = "https://wa.me/" + noWa + "?text=" + encodeURIComponent(pesan);
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
